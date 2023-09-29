@@ -102,6 +102,13 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 270829b8f29691c46905073d82dc45d0, type: 3}
   bulletSpeed: 0.1
+  xBound: 100
+  yBound: 100
+  a: -0.1
+  b: 0.1
+  t: 0
+  step: 0.1
+  strength: 0.05
 --- !u!58 &2511069879658049743
 CircleCollider2D:
   m_ObjectHideFlags: 0
