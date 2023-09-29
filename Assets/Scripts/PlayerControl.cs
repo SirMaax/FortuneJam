@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -40,7 +41,7 @@ public class PlayerControl : MonoBehaviour
         Vector2 direction = (aimCircle.transform.position - transform.position).normalized;
         // Instantiate(bulletPreFab, transform.position, Quaternion.LookRotation((Vector3)direction, Vector3.up));
         Bullet bullet = Instantiate(bulletPreFab, transform.position, Quaternion.identity).GetComponent<Bullet>();
-        bullet.SetBulletType(Bullet.EnumBulletType.player);
+        bullet.SetBulletType(Enums.EnumBulletType.player);
         bullet.SetDirection(direction);
     }
     

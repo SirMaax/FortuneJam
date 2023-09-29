@@ -27,7 +27,7 @@ public class InputHandler : MonoBehaviour
     private void Start()
     {
         //if(TryGetComponent(out Player player)) _player = GetComponent<Player>();
-        playerControl = (PlayerControl) ReferenceManager.referenceManager.GiveRef(ReferenceManager.RefEnum.playerControl);
+        playerControl = (PlayerControl) ReferenceManager.referenceManager.GiveRef(Enums.RefEnum.playerControl);
     }
 
     

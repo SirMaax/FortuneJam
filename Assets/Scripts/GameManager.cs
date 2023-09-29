@@ -7,14 +7,9 @@ public class GameManager : MonoBehaviour
     public bool setRunning;
     public bool setMenu;
     public bool setPaused;
-    public enum GameStatus
-    {
-        running,
-        menu,
-        paused
-    }
+   
 
-    public static GameStatus state;
+    public static Enums.GameStatus state;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,17 +23,17 @@ public class GameManager : MonoBehaviour
     {
         if (setRunning)
         {
-            state = GameStatus.running;
+            state = Enums.GameStatus.running;
             setRunning = false;
         }
         if (setMenu)
         {
-            state = GameStatus.menu;
+            state = Enums.GameStatus.menu;
             setMenu = false;
         }
         if (setPaused)
         {
-            state = GameStatus.paused;
+            state = Enums.GameStatus.paused;
             setPaused = false;
         }
     }

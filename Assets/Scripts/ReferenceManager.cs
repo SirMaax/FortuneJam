@@ -7,31 +7,22 @@ public class ReferenceManager : MonoBehaviour
 {
     [SerializeField]private List<MonoBehaviour> referenceList;
     [SerializeField]private List<GameObject> referenceListObject;
-    [SerializeField] private Dictionary<RefEnum, MonoBehaviour> dictionary;
-    [SerializeField] private Dictionary<RefEnumGame, GameObject> dictionaryObject;
+    [SerializeField] private Dictionary<Enums.RefEnum, MonoBehaviour> dictionary;
+    [SerializeField] private Dictionary<Enums.RefEnumGame, GameObject> dictionaryObject;
     public static ReferenceManager referenceManager;
     
-    public enum RefEnum
-    {
-        inputHandler,
-        playerControl,
-    }
-
-    public enum RefEnumGame
-    {
-        player
-    }
+   
     // Start is called before the first frame update
 
     private void Awake()
     {
         referenceManager = this;
         
-        dictionary = new Dictionary<RefEnum, MonoBehaviour>();
+        dictionary = new Dictionary<Enums.RefEnum, MonoBehaviour>();
         dictionary.Add(0,referenceList[0]);
-        dictionary.Add(RefEnum.playerControl,referenceList[1]);
+        dictionary.Add(Enums.RefEnum.playerControl,referenceList[1]);
         
-        dictionaryObject = new Dictionary<RefEnumGame, GameObject>();
+        dictionaryObject = new Dictionary<Enums.RefEnumGame, GameObject>();
         dictionaryObject.Add(0,referenceListObject[0]);
     }
 
@@ -46,14 +37,14 @@ public class ReferenceManager : MonoBehaviour
         
     }
 
-    public MonoBehaviour GiveRef(RefEnum reference)
+    public MonoBehaviour GiveRef(Enums.RefEnum reference)
     {
         if (dictionary.ContainsKey(reference)) return dictionary[reference];
         return null;
           
     }
     
-    public GameObject GiveGame(RefEnumGame reference)
+    public GameObject GiveGame(Enums.RefEnumGame reference)
     {
         if (dictionaryObject.ContainsKey(reference)) return dictionaryObject[reference];
         return null;

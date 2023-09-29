@@ -12,12 +12,9 @@ public class Bullet : MonoBehaviour
 
     [Header("Attributes")] 
     [SerializeField] private float bulletSpeed;
-    private EnumBulletType bulletType;
+    private Enums.EnumBulletType bulletType;
     private Vector2 direction;
-    public enum EnumBulletType
-    {
-        player,
-    }
+    
 
     
     
@@ -33,7 +30,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(direction * bulletSpeed);
     }
 
-    public void SetBulletType(EnumBulletType type)
+    public void SetBulletType(Enums.EnumBulletType type)
     {
         bulletType = type;
     }

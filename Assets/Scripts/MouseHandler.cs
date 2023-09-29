@@ -15,15 +15,15 @@ public class MouseHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = ReferenceManager.referenceManager.GetComponent<ReferenceManager>()
-            .GiveGame(ReferenceManager.RefEnumGame.player);
+        player = ReferenceManager.referenceManager
+            .GiveGame(Enums.RefEnumGame.player);
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (GameManager.state == GameManager.GameStatus.running)
+        if (GameManager.state == Enums.GameStatus.running)
         {
             //No mouse seen keep it in the circle
             Vector2 direction = mousePos - (Vector2)player.transform.position;
