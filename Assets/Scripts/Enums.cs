@@ -25,6 +25,7 @@ public class Enums : MonoBehaviour
     {
         running,
         menu,
-        paused
+        paused,
+        slowed,
     }
 }

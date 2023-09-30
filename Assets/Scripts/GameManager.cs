@@ -37,5 +37,12 @@ public class GameManager : MonoBehaviour
             setPaused = false;
         }
     }
+
+    public static void RestartStage()
+    {
+        //Gameover sound aka breaking glass. Animation
+        //...
+        
+    }
     
 }

@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
         CheckBounds();
         transform.Translate(direction * bulletSpeed);
         // AddSecondaryMotion();
-        AddThirdMotion();
+        // AddThirdMotion();
     }
 
     private void AddSecondaryMotion()
@@ -81,6 +81,28 @@ public class Bullet : MonoBehaviour
         if (pos.x >= xBound || pos.x <= xBound * -1 || pos.y >= yBound || pos.y <= yBound * -1) Destroy(gameObject);
 
     }
-    
-    
+
+ 
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("wall"))
+        {
+
+            StartCoroutine(DestroyYourself(0.25f));
+        }
+        else if (col.gameObject.tag.Equals("Player"))
+        {
+            if (!col.gameObject.GetComponent<PlayerControl>().invincible)
+            {
+                GameManager.RestartStage();
+            }
+        }
+    }
+
+    IEnumerator DestroyYourself(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
+    }
 }

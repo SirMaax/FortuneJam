@@ -57,6 +57,16 @@ public class InputHandler : MonoBehaviour
     {
         playerControl.ShootPrep();
     }
+
+    public void OnDodge(InputValue value)
+    {
+        playerControl.Dodge();
+    }
+
+    public void OnReload(InputValue value)
+    {
+        playerControl.Reload();
+    }
     
     public void OnJump(InputValue value)
     {
